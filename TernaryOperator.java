@@ -9,34 +9,34 @@ public class TernaryOperator {
         // // int c = 30;
         // int c = 15;
 
-        // let's take input from user
-        Scanner scanner = new Scanner(System.in);
+        try (// let's take input from user
+                Scanner scanner = new Scanner(System.in)) {
+            System.out.println("Enter first number: ");
+            int a = scanner.nextInt();
 
-        System.out.println("Enter first number: ");
-        int a = scanner.nextInt();
+            System.out.println("Enter second number: ");
+            int b = scanner.nextInt();
 
-        System.out.println("Enter second number: ");
-        int b = scanner.nextInt();
+            System.out.println("Enter third number: ");
+            int c = scanner.nextInt();
 
-        System.out.println("Enter third number: ");
-        int c = scanner.nextInt();
+            int result = (a > b) ? (a > c) ? a : c : (b > c) ? b : c;
 
-        int result = (a > b) ? (a > c) ? a : c : (b > c) ? b : c;
+            // Long form of this statement
+            // int result;
+            // if (a > b) {
+            // if (a > c) {
+            // result = a;
+            // } else {
+            // result = c;
+            // }
+            // } else if (b > c) {
+            // result = b;
+            // } else {
+            // result = c;
+            // }
 
-        // Long form of this statement
-        // int result;
-        // if (a > b) {
-        // if (a > c) {
-        // result = a;
-        // } else {
-        // result = c;
-        // }
-        // } else if (b > c) {
-        // result = b;
-        // } else {
-        // result = c;
-        // }
-
-        System.out.println("Largest number is: " + result);
+            System.out.println("Largest number is: " + result);
+        }
     }
 }

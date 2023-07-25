@@ -35,19 +35,20 @@ public class PascalTriangle {
     public static void main(String[] args) {
         PascalTriangle solution = new PascalTriangle();
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the number of rows you want.");
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.println("Enter the number of rows you want.");
 
-        int numRows = scanner.nextInt();
+            int numRows = scanner.nextInt();
 
-        List<List<Integer>> triangles = solution.generate(numRows);
+            List<List<Integer>> triangles = solution.generate(numRows);
 
-        System.out.println("Pascal's Triangle: ");
-        for (List<Integer> row : triangles) {
-            System.out.println(row);
+            System.out.println("Pascal's Triangle: ");
+            for (List<Integer> row : triangles) {
+                System.out.println(row);
+            }
+
+            System.out.println();
+            System.out.println(triangles);
         }
-
-        System.out.println();
-        System.out.println(triangles);
     }
 }
