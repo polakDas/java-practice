@@ -17,6 +17,7 @@ public class ClientSide {
 
         System.out.println("Enter the notification text");
         String message = scanner.nextLine();
+        scanner.close();
 
         if (receiver.matches("^\\+8801.*$") || receiver.matches("^01.*$") || receiver.matches("1.*$")) {
             sms.runService(receiver, message);
